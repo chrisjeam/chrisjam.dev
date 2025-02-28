@@ -1,0 +1,40 @@
+---
+// import { Image } from 'astro:assets';
+---
+
+<section
+  id="hero"
+  class="h-screen flex items-center justify-center bg-fixed bg-cover bg-center relative"
+  style={{
+    backgroundImage: `url(${encodeURI(
+      "https://astroplate.netlify.app/_astro/banner.BMwzPDc-_ZWpPy3.webp"
+    )})`,
+  }}
+>
+  <div class="absolute inset-0 bg-black opacity-50"></div>
+  <div class="relative z-10 text-center">
+    <h1 class="text-5xl font-bold mb-4 animate-fade-in-down text-white">John Doe</h1>
+    <h2 class="text-3xl font-bold mb-4 animate-fade-in-down text-white">Front-end Developer</h2>
+    <p class="text-xl mb-8 text-gray-200 animate-fade-in-up">
+      Crafting digital experiences with JavaScript, HTML, and CSS
+    </p>
+    <a
+      href="#projects"
+      class="inline-block bg-primary text-white hover:bg-primary/90 transition-colors duration-300 animate-fade-in-up rounded-full px-8 py-3 text-lg font-semibold"
+    >
+      View My Work
+    </a>
+  </div>
+</section>
+
+<script>
+  const heroSection = document.getElementById('hero');
+  
+  window.addEventListener('scroll', () => {
+    if (heroSection) {
+      const scrollPosition = window.scrollY;
+      heroSection.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+    }
+  });
+</script>
+

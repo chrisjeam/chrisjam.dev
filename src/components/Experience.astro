@@ -1,0 +1,44 @@
+---
+const experiences = [
+  {
+    year: "2023",
+    title: "Senior Front-end Developer",
+    company: "TechCorp",
+    description: "Leading complex web projects and mentoring junior developers.",
+  },
+  {
+    year: "2021",
+    title: "Front-end Developer",
+    company: "WebSolutions Inc.",
+    description: "Developed user interfaces using modern JavaScript frameworks.",
+  },
+  {
+    year: "2019",
+    title: "Junior Front-end Developer",
+    company: "StartUp Labs",
+    description: "Specialized in creating responsive and interactive user interfaces.",
+  },
+];
+---
+
+<section id="timeline" class="py-16 px-4 md:px-20 bg-white">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Experience</h2>
+    <div class="space-y-6">
+      {experiences.map((event, index) => (
+        <div class="flex items-center space-x-4">
+          <div class="flex-shrink-0 w-24 text-right">
+            <span class="text-primary font-bold">{event.year}</span>
+          </div>
+          <div class="w-2 h-2 rounded-full bg-primary"></div>
+          <div class="flex-grow">
+            <h3 class="text-lg font-semibold text-gray-800">{event.title}</h3>
+            <p class="text-gray-600">{event.company}</p>
+            <p class="text-sm text-gray-500">{event.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+

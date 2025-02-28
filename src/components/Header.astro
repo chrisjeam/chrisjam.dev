@@ -1,0 +1,101 @@
+---
+import { Image } from 'astro:assets';
+import Astronauta from '../assets/astronauta.png'
+//import { Icon } from 'astro-icon';
+
+const navItems = [
+  { id: "hero", icon: "lucide:home", label: "Home" },
+  { id: "about", icon: "lucide:user", label: "About" },
+  { id: "skills", icon: "lucide:code", label: "Skills" },
+  { id: "timeline", icon: "lucide:briefcase", label: "Experience" },
+  { id: "projects", icon: "lucide:folder-open", label: "Projects" },
+  { id: "contact", icon: "lucide:send", label: "Contact" },
+];
+---
+
+<button
+  id="menu-toggle"
+  class="fixed top-4 left-4 z-50 lg:hidden bg-white p-2 rounded-full shadow-md"
+>
+  <!-- <Icon name="lucide:menu" class="w-6 h-6 text-primary" /> -->
+</button>
+
+<aside
+  id="sidebar"
+  class="fixed left-0 top-0 h-full w-64 bg-white flex flex-col items-center py-8 px-4 z-40 transition-transform duration-300 ease-in-out overflow-y-auto shadow-md -translate-x-full lg:translate-x-0"
+>
+  <div class="flex flex-col items-center space-y-4 mb-8">
+    <img
+      src={Astronauta.src}
+      alt="John Doe"
+      width={120}
+      height={120}
+      class="rounded-full border-4 border-primary"
+    />
+    <h2 class="text-xl font-bold text-gray-800">Christian Aguilar</h2>
+    <p class="text-sm text-center text-gray-600">
+      Front-end Developer passionate about creating beautiful and functional web experiences.
+    </p>
+  </div>
+
+  <nav class="flex flex-col items-center space-y-6 mb-8 w-full">
+    {navItems.map((item) => (
+      <a
+        href={`#${item.id}`}
+        class="flex items-center space-x-2 p-2 w-full rounded-md text-gray-600 hover:bg-gray-100 hover:text-primary transition-colors duration-300"
+      >
+        {/* <Icon name={item.icon} class="w-5 h-5" /> */}
+        <span>{item.label}</span>
+      </a>
+    ))}
+  </nav>
+
+  <div class="flex space-x-4 mt-auto">
+    <a
+      href="https://github.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-gray-600 hover:text-primary transition-colors duration-300"
+    >
+      <!-- <Icon name="lucide:github" class="w-6 h-6" /> -->
+    </a>
+    <a
+      href="https://linkedin.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-gray-600 hover:text-primary transition-colors duration-300"
+    >
+      <!-- <Icon name="lucide:linkedin" class="w-6 h-6" /> -->
+    </a>
+    <a
+      href="https://twitter.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-gray-600 hover:text-primary transition-colors duration-300"
+    >
+      <!-- <Icon name="lucide:twitter" class="w-6 h-6" /> -->
+    </a>
+  </div>
+</aside>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const sidebar = document.getElementById('sidebar');
+
+  menuToggle?.addEventListener('click', () => {
+    sidebar?.classList.toggle('-translate-x-full');
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href')?.slice(1);
+      const targetElement = document.getElementById(targetId || '');
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+        sidebar?.classList.add('-translate-x-full');
+      }
+    });
+  });
+</script>
+
