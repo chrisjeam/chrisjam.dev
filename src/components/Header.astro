@@ -1,23 +1,14 @@
 ---
-import { Image } from 'astro:assets';
 import Astronauta from '../assets/astronauta.png'
-//import { Icon } from 'astro-icon';
-
-const navItems = [
-  { id: "hero", icon: "lucide:home", label: "Home" },
-  { id: "about", icon: "lucide:user", label: "About" },
-  { id: "skills", icon: "lucide:code", label: "Skills" },
-  { id: "timeline", icon: "lucide:briefcase", label: "Experience" },
-  { id: "projects", icon: "lucide:folder-open", label: "Projects" },
-  { id: "contact", icon: "lucide:send", label: "Contact" },
-];
+import { Icon } from 'astro-icon/components';
+import { NAV_LINKS, RRSS_LINKS } from '../constants/NavItems';
 ---
 
 <button
   id="menu-toggle"
   class="fixed top-4 left-4 z-50 lg:hidden bg-white p-2 rounded-full shadow-md"
 >
-  <!-- <Icon name="lucide:menu" class="w-6 h-6 text-primary" /> -->
+  <Icon name="lucide:menu" class="w-6 h-6 text-primary" /> 
 </button>
 
 <aside
@@ -34,47 +25,33 @@ const navItems = [
     />
     <h2 class="text-xl font-bold text-gray-800">Christian Aguilar</h2>
     <p class="text-sm text-center text-gray-600">
-      Front-end Developer passionate about creating beautiful and functional web experiences.
+      Desarrollador Front-end apasionado por crear experiencias web hermosas y funcionales.
     </p>
   </div>
 
-  <nav class="flex flex-col items-center space-y-6 mb-8 w-full">
-    {navItems.map((item) => (
+  <nav class="flex flex-col items-center space-y-4 mb-8 w-full">
+    {NAV_LINKS.map((item) => (
       <a
         href={`#${item.id}`}
         class="flex items-center space-x-2 p-2 w-full rounded-md text-gray-600 hover:bg-gray-100 hover:text-primary transition-colors duration-300"
       >
-        {/* <Icon name={item.icon} class="w-5 h-5" /> */}
+        <Icon name={item.icon} class="w-5 h-5" />
         <span>{item.label}</span>
       </a>
     ))}
   </nav>
 
   <div class="flex space-x-4 mt-auto">
-    <a
-      href="https://github.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="text-gray-600 hover:text-primary transition-colors duration-300"
-    >
-      <!-- <Icon name="lucide:github" class="w-6 h-6" /> -->
-    </a>
-    <a
-      href="https://linkedin.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="text-gray-600 hover:text-primary transition-colors duration-300"
-    >
-      <!-- <Icon name="lucide:linkedin" class="w-6 h-6" /> -->
-    </a>
-    <a
-      href="https://twitter.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="text-gray-600 hover:text-primary transition-colors duration-300"
-    >
-      <!-- <Icon name="lucide:twitter" class="w-6 h-6" /> -->
-    </a>
+    {RRSS_LINKS.map((rrss) => (
+      <a
+        href={rrss.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gray-600 hover:text-primary transition-colors duration-300"
+      >
+        <Icon name={rrss.icon} class="w-6 h-6" /> 
+      </a>
+    ))}
   </div>
 </aside>
 

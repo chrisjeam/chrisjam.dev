@@ -1,7 +1,17 @@
 ---
 // import { Image } from 'astro:assets';
 ---
-
+<section class="h-[calc(100vh-100px)] flex items-center justify-center text-center px-6 bg-cover bg-no-repeat bg-center" style={{
+    backgroundImage: `url(${encodeURI(
+      "https://astro.build/_astro/final-cta.-VPcghul_Z18Stfo.webp"
+    )})`,
+  }}>
+        <div class="max-w-3xl">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 text-gray-300">Explorando el Universo del <span class="text-white">Desarrollo Web</span></h1>
+            <p class="text-lg text-gray-300 mb-6">Soy un desarrollador web apasionado por crear experiencias interactivas fuera de este mundo.</p>
+            <a href="#projects" class="bg-primary hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition">Ver Proyectos</a>
+        </div>
+    <!-- </section>
 <section
   id="hero"
   class="h-screen flex items-center justify-center bg-fixed bg-cover bg-center relative"
@@ -24,8 +34,8 @@
     >
       View My Work
     </a>
-  </div>
-</section>
+  </div>-->
+</section> 
 
 <script>
   const heroSection = document.getElementById('hero');

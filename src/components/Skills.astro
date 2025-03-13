@@ -1,28 +1,35 @@
 ---
+import { Icon } from "astro-icon/components";
+import { TITLES } from "../constants/Titles";
+
 const skills = [
-  "JavaScript",
-  "React",
-  "HTML5",
-  "CSS3",
-  "Node.js",
-  "Vue.js",
-  "TypeScript",
-  "GraphQL",
-  "Tailwind CSS",
-  "Git",
+  {name: "JavaScript", icon: "vscode-icons:file-type-js-official"},
+  {name: "Python", icon: "vscode-icons:file-type-python"},
+  {name: "Node.js", icon: "vscode-icons:file-type-node"},
+  {name: "HTML5", icon: "vscode-icons:file-type-html"},
+  {name: "CSS3", icon: "vscode-icons:file-type-css2"},
+  {name: "React", icon: "vscode-icons:file-type-reactjs"},
+  {name: "Vue.js", icon: "vscode-icons:file-type-vue"},
+  {name: "Astro", icon: "vscode-icons:file-type-light-astro"},
+  {name: "TypeScript", icon: "vscode-icons:file-type-typescript-official"},
+  {name: "GraphQL", icon: "vscode-icons:file-type-graphql"},
+  {name: "Tailwind CSS", icon: "vscode-icons:file-type-tailwind"},
+  {name: "PostgresSQL", icon: "vscode-icons:file-type-pgsql"},
+  {name: "MySQL", icon: "vscode-icons:file-type-mysql"},
+  {name: "Git", icon: "vscode-icons:file-type-git"},
 ];
 ---
 
 <section id="skills" class="py-20 px-4 md:px-20 bg-gray-50">
   <div class="max-w-4xl mx-auto">
-    <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Skills & Technologies</h2>
+    <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">{TITLES.skills}</h2>
     <div class="flex flex-wrap justify-center gap-4">
       {skills.map((skill) => (
-        <span
-          class="px-4 py-2 text-lg bg-white text-primary hover:bg-primary hover:text-white transition-colors duration-300 rounded-full shadow-sm"
+        <div
+          class="flex flex-row justify-center items-center gap-2 px-4 py-2 text-lg bg-white text-primary hover:bg-primary hover:text-white transition-colors duration-300 rounded-full shadow-sm"
         >
-          {skill}
-        </span>
+          <Icon name={skill.icon} /><span>{skill.name}</span>
+        </div>
       ))}
     </div>
   </div>

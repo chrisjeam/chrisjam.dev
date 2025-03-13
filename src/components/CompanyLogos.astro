@@ -1,19 +1,17 @@
 ---
 import { Image } from 'astro:assets';
+import { TITLES } from '../constants/Titles';
 
 const companies = [
-  { name: "Company 1", logo: "/placeholder.svg" },
-  { name: "Company 2", logo: "/placeholder.svg" },
-  { name: "Company 3", logo: "/placeholder.svg" },
-  { name: "Company 4", logo: "/placeholder.svg" },
-  { name: "Company 5", logo: "/placeholder.svg" },
-  { name: "Company 6", logo: "/placeholder.svg" },
+  { name: "Essity", logo: "/essity-logo.avif" },
+  { name: "Accenture", logo: "/accenture-logo.png" },
+  { name: "Banco Itaú", logo: "/itau-logo.png" },
 ];
 ---
 
 <section id="company-logos" class="py-16 px-4 md:px-20 bg-white">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Companies I've Worked With</h2>
+    <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">{TITLES.company}</h2>
     <div class="flex flex-wrap justify-center items-center gap-8">
       {companies.map((company) => (
         <div class="w-32 h-16 flex items-center justify-center">
