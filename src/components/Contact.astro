@@ -1,26 +1,31 @@
 ---
 import { TITLES } from "../constants/Titles";
 
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
 ---
 
-<section id="contact" class="py-20 px-4 md:px-20 bg-gray-50">
+<section
+  id="contact"
+  class="py-20 px-4 md:px-20 bg-gradient-to-br from-violet-600 via-indigo-700 to-purple-800 dark:from-violet-950 dark:via-indigo-950 dark:to-purple-950"
+>
   <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-4 text-gray-800">{TITLES.contact}</h2>
-    <p class="text-xl mb-8 text-gray-600">¿Te interesa trabajar juntos? ¡Hablemos!</p>
+    <h2 class="text-3xl font-bold mb-4 text-white">{TITLES.contact}</h2>
+    <p class="text-xl mb-8 text-gray-300">
+      ¿Te interesa trabajar juntos? ¡Hablemos!
+    </p>
     <div class="flex flex-wrap justify-center gap-4">
       <a
         href="mailto:hi@chrisjam.dev"
-        class="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold text-white bg-primary hover:bg-primary/90 transition-colors duration-300 rounded-full"
+        class="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold text-white bg-[#ffa922] hover:bg-[#e78f0a] transition-colors duration-300 rounded-full"
       >
         <Icon name="lucide:mail" class="w-5 h-5 mr-2" />
-        Contactame 
+        Contactame
       </a>
       <a
         href="https://www.linkedin.com/in/chrisjam/"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold text-primary bg-white border border-primary hover:bg-primary hover:text-white transition-colors duration-300 rounded-full"
+        class="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold text-primary bg-gray-100 border border-primary hover:bg-white transition-colors duration-300 rounded-full"
       >
         <Icon name="lucide:linkedin" class="w-5 h-5 mr-2" />
         LinkedIn
@@ -28,4 +33,3 @@ import { Icon } from 'astro-icon/components';
     </div>
   </div>
 </section>
-

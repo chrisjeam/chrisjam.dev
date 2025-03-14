@@ -1,14 +1,14 @@
 ---
-import Astronauta from '../assets/astronauta.png'
-import { Icon } from 'astro-icon/components';
-import { NAV_LINKS, RRSS_LINKS } from '../constants/NavItems';
+import Astronauta from "../assets/astronaut-profile.png";
+import { Icon } from "astro-icon/components";
+import { NAV_LINKS, RRSS_LINKS } from "../constants/NavItems";
 ---
 
 <button
   id="menu-toggle"
   class="fixed top-4 left-4 z-50 lg:hidden bg-white p-2 rounded-full shadow-md"
 >
-  <Icon name="lucide:menu" class="w-6 h-6 text-primary" /> 
+  <Icon name="lucide:menu" class="w-6 h-6 text-primary" />
 </button>
 
 <aside
@@ -25,54 +25,58 @@ import { NAV_LINKS, RRSS_LINKS } from '../constants/NavItems';
     />
     <h2 class="text-xl font-bold text-gray-800">Christian Aguilar</h2>
     <p class="text-sm text-center text-gray-600">
-      Desarrollador Front-end apasionado por crear experiencias web hermosas y funcionales.
+      Desarrollador Front-end apasionado por crear experiencias web hermosas y
+      funcionales.
     </p>
   </div>
 
   <nav class="flex flex-col items-center space-y-4 mb-8 w-full">
-    {NAV_LINKS.map((item) => (
-      <a
-        href={`#${item.id}`}
-        class="flex items-center space-x-2 p-2 w-full rounded-md text-gray-600 hover:bg-gray-100 hover:text-primary transition-colors duration-300"
-      >
-        <Icon name={item.icon} class="w-5 h-5" />
-        <span>{item.label}</span>
-      </a>
-    ))}
+    {
+      NAV_LINKS.map((item) => (
+        <a
+          href={`#${item.id}`}
+          class="flex items-center space-x-2 p-2 w-full rounded-md text-gray-600 hover:bg-gray-100 hover:text-primary transition-colors duration-300"
+        >
+          <Icon name={item.icon} class="w-5 h-5" />
+          <span>{item.label}</span>
+        </a>
+      ))
+    }
   </nav>
 
   <div class="flex space-x-4 mt-auto">
-    {RRSS_LINKS.map((rrss) => (
-      <a
-        href={rrss.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-gray-600 hover:text-primary transition-colors duration-300"
-      >
-        <Icon name={rrss.icon} class="w-6 h-6" /> 
-      </a>
-    ))}
+    {
+      RRSS_LINKS.map((rrss) => (
+        <a
+          href={rrss.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-600 hover:text-primary transition-colors duration-300"
+        >
+          <Icon name={rrss.icon} class="w-6 h-6" />
+        </a>
+      ))
+    }
   </div>
 </aside>
 
 <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const sidebar = document.getElementById('sidebar');
+  const menuToggle = document.getElementById("menu-toggle");
+  const sidebar = document.getElementById("sidebar");
 
-  menuToggle?.addEventListener('click', () => {
-    sidebar?.classList.toggle('-translate-x-full');
+  menuToggle?.addEventListener("click", () => {
+    sidebar?.classList.toggle("-translate-x-full");
   });
 
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
       e.preventDefault();
-      const targetId = this.getAttribute('href')?.slice(1);
-      const targetElement = document.getElementById(targetId || '');
+      const targetId = this.getAttribute("href")?.slice(1);
+      const targetElement = document.getElementById(targetId || "");
       if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-        sidebar?.classList.add('-translate-x-full');
+        targetElement.scrollIntoView({ behavior: "smooth" });
+        sidebar?.classList.add("-translate-x-full");
       }
     });
   });
 </script>
-

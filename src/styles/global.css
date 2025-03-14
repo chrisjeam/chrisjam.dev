@@ -4,3 +4,84 @@
   --color-tahiti: #3ab7bf;
   --color-bermuda: #78dcca;
 }
+
+.hero {
+  --tw-gradient-to: #3b0764 var(--tw-gradient-to-position);
+  --tw-gradient-stops:
+    var(--tw-gradient-from), #1e1b4b var(--tw-gradient-via-position),
+    var(--tw-gradient-to);
+}
+.hero-gradient {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+.text-gradient {
+  @apply bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent;
+}
+
+/* Custom animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px rgba(139, 92, 246, 0.3);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Page transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 300ms,
+    transform 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    opacity 300ms,
+    transform 300ms;
+}
+
+/* Loading skeleton animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

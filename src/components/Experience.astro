@@ -2,55 +2,68 @@
 import { TITLES } from "../constants/Titles";
 import ExperienceCard from "./ExperienceCard.astro";
 
-
 const experiences = [
   {
     year: "ago. 2023 - Presente",
     title: "Team Lead",
     company: "Accenture",
-    description: "Experiencia liderando proyectos para clientes, coordinando equipos de desarrollo y asegurando la aplicación de metodologías ágiles en diversas células. Responsable de liderar el Charter de Desarrolladores React, brindando soporte técnico al equipo y fomentando el crecimiento profesional. Enfocado en la generación de ideas innovadoras para nuevas implementaciones y mejoras continuas.",
+    description:
+      "Experiencia liderando proyectos para clientes, coordinando equipos de desarrollo y asegurando la aplicación de metodologías ágiles en diversas células. Responsable de liderar el Charter de Desarrolladores React, brindando soporte técnico al equipo y fomentando el crecimiento profesional. Enfocado en la generación de ideas innovadoras para nuevas implementaciones y mejoras continuas.",
   },
   {
     year: "sept. 2020 - feb. 2023",
     title: "Project Manager",
     company: "Klap",
-    description: "Lideré los proyectos de la Web Pública y Privada de Multicaja Personas, gestionando el backlog como Scrum Master y coordinando los equipos de desarrollo. Me encargué del análisis de requerimientos técnicos para nuevos productos, la gestión de proyectos en Git/Bitbucket y la documentación en Jira/Confluence. Además, apoyé en el desarrollo de interfaces con React y Angular, asegurando la calidad del software con SonarQube.",
+    description:
+      "Lideré los proyectos de la Web Pública y Privada de Multicaja Personas, gestionando el backlog como Scrum Master y coordinando los equipos de desarrollo. Me encargué del análisis de requerimientos técnicos para nuevos productos, la gestión de proyectos en Git/Bitbucket y la documentación en Jira/Confluence. Además, apoyé en el desarrollo de interfaces con React y Angular, asegurando la calidad del software con SonarQube.",
   },
   {
     year: "jul. 2019 - sept. 2020",
     title: "Full-stack Developer",
     company: "Baufest",
-    description: "Desarrollé aplicaciones web con Node.js y C# ASP .NET, incluyendo la programación de Cron-Jobs en C# .NET Core para la integración de servicios financieros (PayGroup) y la creación de scripts en Python para ejecutar procesos en cliente SSH. Participé en la migración y refactorización de microservicios legados, así como en el desarrollo de interfaces con React.js, Redux, React-Router y Material-UI. Además, implementé procedimientos almacenados y triggers en SQL Server, documenté código con Swagger y gestioné el control de versiones con Azure DevOps.",
+    description:
+      "Desarrollé aplicaciones web con Node.js y C# ASP .NET, incluyendo la programación de Cron-Jobs en C# .NET Core para la integración de servicios financieros (PayGroup) y la creación de scripts en Python para ejecutar procesos en cliente SSH. Participé en la migración y refactorización de microservicios legados, así como en el desarrollo de interfaces con React.js, Redux, React-Router y Material-UI. Además, implementé procedimientos almacenados y triggers en SQL Server, documenté código con Swagger y gestioné el control de versiones con Azure DevOps.",
   },
   {
     year: "jun. 2018 - jul. 2019",
     title: "Analist Developer",
     company: "Readiness IT",
-    description: "Desarrollé aplicaciones con JavaScript, Node.js, Express.js, Python y Flask, creando interfaces gráficas con Vue.js, Vuex, Bootstrap y Bootstrap-Vue. Participé en el análisis de requerimientos para el proyecto TDE de Entel y en la gestión de defectos del stream ATG. Realicé pruebas funcionales y automatizadas con Jenkins y Postman, asegurando la calidad del software. Además, diseñé bases de datos con MongoDB y Firebase, gestioné el código en Git/GitLab y desarrollé procesos Batch para optimizar la ejecución de tareas.",
+    description:
+      "Desarrollé aplicaciones con JavaScript, Node.js, Express.js, Python y Flask, creando interfaces gráficas con Vue.js, Vuex, Bootstrap y Bootstrap-Vue. Participé en el análisis de requerimientos para el proyecto TDE de Entel y en la gestión de defectos del stream ATG. Realicé pruebas funcionales y automatizadas con Jenkins y Postman, asegurando la calidad del software. Además, diseñé bases de datos con MongoDB y Firebase, gestioné el código en Git/GitLab y desarrollé procesos Batch para optimizar la ejecución de tareas.",
   },
   {
     year: "feb. 2018 - may. 2018",
     title: "Líder Técnico",
     company: "TuSeguro.com",
-    description: "Definí requerimientos técnicos, gestioné despliegues y pruebas con GitLab, y desarrollé aplicaciones backend con Python y PHP, junto con frontend en Vue.js. Manejo bases de datos como SQL Server, MySQL y PostgreSQL, asegurando control de versiones con Git y ejecutando pruebas unitarias. Además, gestioné la entrega de proyectos bajo metodología Scrum, garantizando su calidad y cumplimiento.",
+    description:
+      "Definí requerimientos técnicos, gestioné despliegues y pruebas con GitLab, y desarrollé aplicaciones backend con Python y PHP, junto con frontend en Vue.js. Manejo bases de datos como SQL Server, MySQL y PostgreSQL, asegurando control de versiones con Git y ejecutando pruebas unitarias. Además, gestioné la entrega de proyectos bajo metodología Scrum, garantizando su calidad y cumplimiento.",
   },
   {
     year: "nov. 2016 - feb. 2018",
     title: "Líder Técnico",
     company: "Meritop",
-    description: "Experiencia en la coordinación y control de la producción del personal a cargo, análisis de requerimientos técnicos, y generación de informes de gestión. Competencias en el desarrollo de aplicaciones utilizando PHP (Laravel), manejo de bases de datos y generación de respaldos con MySql, así como en la planificación de proyectos aplicando la metodología Scrum. Además, conocimientos en la programación de despliegues en diversos ambientes utilizando CI/CD de Gitlab.",
+    description:
+      "Experiencia en la coordinación y control de la producción del personal a cargo, análisis de requerimientos técnicos, y generación de informes de gestión. Competencias en el desarrollo de aplicaciones utilizando PHP (Laravel), manejo de bases de datos y generación de respaldos con MySql, así como en la planificación de proyectos aplicando la metodología Scrum. Además, conocimientos en la programación de despliegues en diversos ambientes utilizando CI/CD de Gitlab.",
   },
 ];
 ---
 
 <section id="timeline" class="py-16 px-4 md:px-20 bg-white">
   <div class="max-w-4xl mx-auto">
-    <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">{TITLES.experience}</h2>
+    <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">
+      {TITLES.experience}
+    </h2>
     <div class="space-y-6">
-      {experiences.map((event, index) => (
-        <ExperienceCard year={event.year} title={event.title} company={event.company} description={event.description} />
-      ))}
+      {
+        experiences.map((event, index) => (
+          <ExperienceCard
+            year={event.year}
+            title={event.title}
+            company={event.company}
+            description={event.description}
+          />
+        ))
+      }
     </div>
   </div>
 </section>
-
